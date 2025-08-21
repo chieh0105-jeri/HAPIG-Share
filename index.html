@@ -1,51 +1,47 @@
-{\rtf1\ansi\ansicpg950\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>LIFF 測試頁</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</head>
+<body>
+  <h2>LIFF Flex Message 測試頁</h2>
+  <button id="shareBtn">分享 Flex Message</button>
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html>\
-<head>\
-  <meta charset="UTF-8">\
-  <title>LIFF \uc0\u28204 \u35430 \u38913 </title>\
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>\
-</head>\
-<body>\
-  <h2>\uc0\u36889 \u26159  LIFF \u28204 \u35430 \u38913 </h2>\
-  <button id="shareBtn">\uc0\u20998 \u20139  Flex Message</button>\
-\
-  <script>\
-    async function main() \{\
-      await liff.init(\{ liffId: "2007971868-97vJ6JBv" \});\
-\
-      if (!liff.isLoggedIn()) \{\
-        liff.login();\
-      \}\
-\
-      const flexMessage = \{\
-        type: "flex",\
-        altText: "\uc0\u36889 \u26159 \u28204 \u35430  Flex Message",\
-        contents: \{\
-          type: "bubble",\
-          body: \{\
-            type: "box",\
-            layout: "vertical",\
-            contents: [\
-              \{ type: "text", text: "Hello LIFF!", weight: "bold", size: "xl" \},\
-              \{ type: "text", text: "\uc0\u36889 \u26159 \u19968 \u24373 \u28204 \u35430 \u21345 \u29255 " \}\
-            ]\
-          \}\
-        \}\
-      \};\
-\
-      document.getElementById("shareBtn").onclick = async () => \{\
-        await liff.shareTargetPicker([flexMessage]);\
-      \};\
-    \}\
-    main();\
-  </script>\
-</body>\
-</html>\
-}
+  <script>
+    async function main() {
+      // 填入你的 LIFF ID（不是整個 URL，只是那串字母數字）
+      const liffId = "2007971868-97vJ6JBv";
+
+      await liff.init({ liffId });
+
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
+
+      const flexMessage = {
+        type: "flex",
+        altText: "這是測試 Flex Message",
+        contents: {
+          type: "bubble",
+          body: {
+            type: "box",
+            layout: "vertical",
+            contents: [
+              { type: "text", text: "Hello LIFF!", weight: "bold", size: "xl" },
+              { type: "text", text: "這是一張測試卡片" }
+            ]
+          }
+        }
+      };
+
+      document.getElementById("shareBtn").onclick = async () => {
+        await liff.shareTargetPicker([flexMessage]);
+      };
+    }
+
+    main();
+  </script>
+</body>
+</html>
