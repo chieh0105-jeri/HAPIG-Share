@@ -1,49 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>LIFF Flex 測試頁</title>
-  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
 </head>
 <body>
-  <h1>LIFF Flex Message 測試頁</h1>
-  <button id="shareBtn">分享 Flex Message</button>
-
-  <script>
-    async function main() {
-      // 將下方換成你的 LIFF ID（不是 URL）
-      const liffId = "2007971868-97vJ6JBv";
-
-      await liff.init({ liffId });
-
-      // 若未登入，導向登入
-      if (!liff.isLoggedIn()) {
-        liff.login();
-      }
-
-      // 範例 Flex Message
-      const flexMessage = {
-        type: "flex",
-        altText: "測試 Flex Message",
-        contents: {
-          type: "bubble",
-          body: {
-            type: "box",
-            layout: "vertical",
-            contents: [
-              { type: "text", text: "Hello LIFF!", weight: "bold", size: "xl" },
-              { type: "text", text: "這是一張測試卡片" }
-            ]
-          }
-        }
-      };
-
-      // 按鈕點擊事件
-      document.getElementById("shareBtn").onclick = async () => {
-        await liff.shareTargetPicker([flexMessage]);
-      };
-    }
-
-    main();
-  </script>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-Hant"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;收款帳號分享&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://static.line-scdn.net/liff/edge/2/sdk.js"&gt;&lt;/script&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body style="font-family: sans-serif; text-align: center; padding: 40px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;h2&gt;分享收款帳號給好友&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;p&gt;點擊下方按鈕，即可選擇 LINE 好友分享收款資訊&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="shareBtn" style="padding:12px 20px; font-size:16px; background:#06C755; color:white; border:none; border-radius:6px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>分享帳號</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// ⚠️ 這裡要換成你自己的 LIFF ID</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const liffId = "YOUR_LIFF_ID"; <span class="Apple-converted-space"> </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>async function main() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>await liff.init({ liffId })</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!liff.isLoggedIn()) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>liff.login()</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>async function share() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const flexMessage = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>type: "flex",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>altText: "收款帳號資訊",</p>
+<p class="p1"><span class="Apple-converted-space">        </span>contents: {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"type": "bubble",</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"hero": {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"type": "image",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"url": "https://i.ibb.co/21GnTqvJ/piglet.png",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"size": "full",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"aspectMode": "cover",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"action": { "type": "uri", "uri": "https://line.me/" },</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"aspectRatio": "26:10",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"backgroundColor": "#FF0080"</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"body": {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"type": "box",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"layout": "vertical",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"spacing": "md",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"contents": [</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"type": "text",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"text": "✮ 您好，請支援轉帳 ✮",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"size": "lg",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"gravity": "center",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"align": "center"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>},</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{ "type": "separator" },</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"type": "box",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"layout": "vertical",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"margin": "lg",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"spacing": "sm",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"contents": [</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{ "type": "filler" },</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"type": "box",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"layout": "baseline",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"spacing": "sm",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"contents": [</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"type": "text",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"text": "國泰世華(013)",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"wrap": true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"size": "xl",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"color": "#FF0080",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"flex": 4,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"align": "center",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"weight": "bold"</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"type": "box",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"layout": "baseline",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"spacing": "sm",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"contents": [</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"type": "text",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"text": "042506124438",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"wrap": true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"color": "#FF0080",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"size": "xxl",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"flex": 4,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"align": "center",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"gravity": "center",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"weight": "bold",</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>"adjustMode": "shrink-to-fit"</p>
+<p class="p1"><span class="Apple-converted-space">                      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>]</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">              </span>},</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"type": "box",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"layout": "vertical",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"margin": "xxl",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"contents": [</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"type": "image",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"url": "https://i.ibb.co/8gk7H4pD/S-95051804.jpg",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"aspectMode": "fit",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"size": "full",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"margin": "md"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"type": "text",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"text": "轉帳完成記得跟我說一聲唷",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"color": "#aaaaaa",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"wrap": true,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"margin": "xxl",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"size": "xs",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"gravity": "center",</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>"align": "center"</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">              </span>},</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{ "type": "separator" }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>]</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>"footer": {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"type": "box",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"layout": "vertical",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>"contents": [</p>
+<p class="p1"><span class="Apple-converted-space">              </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"type": "button",</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"action": {</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>"type": "message",</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>"label": "點我複製帳號",</p>
+<p class="p1"><span class="Apple-converted-space">                  </span>"text": "042506124438"</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>"style": "primary"</p>
+<p class="p1"><span class="Apple-converted-space">              </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>]</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>await liff.shareTargetPicker([flexMessage])</p>
+<p class="p1"><span class="Apple-converted-space">      </span>liff.closeWindow()</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("shareBtn").onclick = share</p>
+<p class="p1"><span class="Apple-converted-space">    </span>main()</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
