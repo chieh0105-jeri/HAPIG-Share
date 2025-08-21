@@ -1,66 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+  <meta charset="UTF-8">
+  <title>LIFF Flex 測試頁</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;LIFF Flex 測試頁&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://static.line-scdn.net/liff/edge/2/sdk.js"&gt;&lt;/script&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;h1&gt;LIFF Flex Message 測試頁&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;button id="shareBtn"&gt;分享 Flex Message&lt;/button&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>async function main() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>// 將下方換成你的 LIFF ID（不是 URL）</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const liffId = "2007971868-97vJ6JBv";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>await liff.init({ liffId });</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>// 若未登入，導向登入</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (!liff.isLoggedIn()) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>liff.login();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>// 範例 Flex Message</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const flexMessage = {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>type: "flex",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>altText: "測試 Flex Message",</p>
-<p class="p1"><span class="Apple-converted-space">        </span>contents: {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>type: "bubble",</p>
-<p class="p1"><span class="Apple-converted-space">          </span>body: {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>type: "box",</p>
-<p class="p1"><span class="Apple-converted-space">            </span>layout: "vertical",</p>
-<p class="p1"><span class="Apple-converted-space">            </span>contents: [</p>
-<p class="p1"><span class="Apple-converted-space">              </span>{ type: "text", text: "Hello LIFF!", weight: "bold", size: "xl" },</p>
-<p class="p1"><span class="Apple-converted-space">              </span>{ type: "text", text: "這是一張測試卡片" }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>]</p>
-<p class="p1"><span class="Apple-converted-space">          </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>// 按鈕點擊事件</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById("shareBtn").onclick = async () =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>await liff.shareTargetPicker([flexMessage]);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>main();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <h1>LIFF Flex Message 測試頁</h1>
+  <button id="shareBtn">分享 Flex Message</button>
+
+  <script>
+    async function main() {
+      // 將下方換成你的 LIFF ID（不是 URL）
+      const liffId = "2007971868-97vJ6JBv";
+
+      await liff.init({ liffId });
+
+      // 若未登入，導向登入
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
+
+      // 範例 Flex Message
+      const flexMessage = {
+        type: "flex",
+        altText: "測試 Flex Message",
+        contents: {
+          type: "bubble",
+          body: {
+            type: "box",
+            layout: "vertical",
+            contents: [
+              { type: "text", text: "Hello LIFF!", weight: "bold", size: "xl" },
+              { type: "text", text: "這是一張測試卡片" }
+            ]
+          }
+        }
+      };
+
+      // 按鈕點擊事件
+      document.getElementById("shareBtn").onclick = async () => {
+        await liff.shareTargetPicker([flexMessage]);
+      };
+    }
+
+    main();
+  </script>
 </body>
 </html>
